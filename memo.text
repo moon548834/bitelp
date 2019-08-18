@@ -1,0 +1,16 @@
+ATT style:
+add     source,dest
+in		port,reg
+out 	reg,port
+
+"=": write-only for this inst and previous value is discarded and replaced by the new one.
+
+
+x86 inline assembly extension:
+a: a reg
+b: b reg
+c: c reg
+d: d reg
+S: si reg
+D: di reg
+N: u8 constant (for in and out insts)
