@@ -1,11 +1,8 @@
-#include "types.h"
+#include "vga.h"
 int kern_entry()
 {
-	uint8_t *input = (uint8_t *)0xB8000;
-	uint8_t color = (0 << 4) | (15 & 0x0f);
-	int i=0;
-	while(i++<1000) {
-		*input++ = 'H'; *input++ = color;
-	}
+	vga_init();
+	screen_clear();
+	putline("Hello world!\n bitelp is running!\n");
 	return 0;
 }

@@ -1,0 +1,7 @@
+./include/vga.c
+./include/asm.c
+./include/vga.h
+./include/asm.h
+./include/types.h
+./boot/boot.s
+./init/init.c

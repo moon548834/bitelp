@@ -42,5 +42,5 @@ qemu:
 
 .PHONY:clean
 clean:
-	rm $(S_OBJECTS) $(C_OBJECTS) bitelp_kernel
+	rm $(S_OBJECTS) $(C_OBJECTS) 
 

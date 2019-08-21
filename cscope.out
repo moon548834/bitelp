@@ -1,0 +1,960 @@
+cscope 15 $HOME/work/github/bitelp -q 0000000096 0000004950
+	@boot/boot.s
+
+2 
+MBOOT_HEADER_MAGIC
+ 
+	gequ
+ 0x1BADB002
+
+3 
+MBOOT_PAGE_ALIGN
+ 
+	gequ
+ 1 << 0
+
+4 
+MBOOT_MEM_INFO
+ 
+	gequ
+ 1 << 1
+
+5 
+MBOOT_HEADER_FLAGS
+ 
+equ
+ 
+	gMBOOT_PAGE_ALIGN
+ | 
+MBOOT_MEM_INFO
+
+
+6 
+MBOOT_CHECKSUM
+ 
+	gequ
+ -(
+	gMBOOT_HEADER_MAGIC
++
+	gMBOOT_HEADER_FLAGS
+)
+
+8 ; ç¬¦åˆ
+	gMuÉiboÙ
+è§„èŒƒçš„ 
+	gOS
+ æ˜ è±¡éœ€è¦è¿™æ ·ä¸€ä¸ª 
+magic
+ Multiboot å¤´
+
+9 ; 
+	gMuÉiboÙ
+ å¤´çš„åˆ†å¸ƒå¿…é¡»å¦‚ä¸‹è¡¨æ‰€ç¤ºï¼š
+
+13 ; 0 
+u32
+ 
+	gmagic
+ å¿…éœ€
+
+14 ; 4 
+u32
+ 
+	gæags
+ å¿…éœ€
+
+15 ; 8 
+u32
+ 
+	gchecksum
+ å¿…éœ€
+
+17 ; æˆ‘ä»¬åªä½¿ç”¨åˆ°è¿™äº›å°±å¤Ÿäº†ï¼Œæ›´å¤šçš„è¯¦ç»†è¯´æ˜Žè¯·å‚é˜… 
+	gGNU
+ ç›¸å…³æ–‡æ¡£
+
+22 [
+BITS
+ 32] ; æ‰€æœ‰ä»£ç ä»¥ 32-
+	gb™
+ çš„æ–¹å¼ç¼–è¯‘
+
+23 
+	g£ùiÚ
+ .
+	g‹xt
+ ; ä»£ç æ®µä»Žè¿™é‡Œå¼€å§‹
+
+25 
+dd
+ 
+	gMBOOT_HEADER_MAGIC
+ ; 
+	gGRUB
+ ä¼šé€šè¿‡è¿™ä¸ªé­”æ•°åˆ¤æ–­è¯¥æ˜ åƒæ˜¯å¦æ”¯æŒ
+
+26 
+dd
+ 
+	gMBOOT_HEADER_FLAGS
+ ; 
+	gGRUB
+ çš„ä¸€äº›åŠ è½½æ—¶é€‰é¡¹ï¼Œå…¶è¯¦ç»†æ³¨é‡Šåœ¨å®šä¹‰å¤„
+
+27 
+dd
+ 
+	gMBOOT_CHECKSUM
+ ; æ£€æµ‹æ•°å€¼ï¼Œå…¶å«ä¹‰åœ¨å®šä¹‰å¤„
+
+29 [
+GLOBAL
+ 
+¡¬t
+] ; å‘å¤–éƒ¨å£°æ˜Žå†…æ ¸ä»£ç å…¥å£ï¼Œæ­¤å¤„æä¾›è¯¥å£°æ˜Žç»™é“¾æŽ¥å™¨
+
+30 [
+GLOBAL
+ 
+glb_mboÙ_±r
+] ; å‘å¤–éƒ¨å£°æ˜Ž 
+	gmuÉiboÙ
+ * å˜é‡
+
+31 [
+EXTERN
+ 
+k”n_’Œy
+] ; å£°æ˜Žå†…æ ¸ 
+	gC
+ ä»£ç çš„å…¥å£å‡½æ•°
+
+33 
+	g¡¬t
+:
+
+34 
+þi
+
+
+35 
+mov
+ 
+e¥
+,
+STACK_TOP
+
+
+36 
+mov
+ 
+	gebp
+,0
+
+37 
+ªd
+ 
+	ge¥
+,0fffffff0
+h
+
+
+38 
+	gmov
+ [
+glb_mboÙ_±r
+],
+ebx
+
+
+39 
+ÿÎ
+ 
+k”n_’Œy
+
+
+40 
+	g¡Ý
+:
+
+41 
+hÉ
+
+
+42 
+jmp
+ 
+¡Ý
+
+
+44 
+£ùiÚ
+ .
+bss
+
+
+45 
+¡ack
+:
+
+46 
+»sb
+ 32768
+
+47 
+glb_mboÙ_±r
+:
+
+48 
+»sb
+ 4
+
+50 
+STACK_TOP
+ 
+equ
+ 
+$
+-
+¡ack
+-1
+
+	@include/asm.c
+
+1 
+	~"asm.h
+"
+
+3 
+šlše
+ 
+	$outb
+(
+ušt16_t
+ 
+pÜt
+,
+ušt8_t
+ 
+v®ue
+) {
+
+4 
+asm
+ volatile("outb %0,%1\n\t"
+
+6 :"a"(
+v®ue
+),"dN"(
+pÜt
+));
+
+7 
+	}
+}
+
+9 
+šlše
+ 
+	$outw
+(
+ušt16_t
+ 
+pÜt
+, ušt16_ˆ
+v®ue
+) {
+
+10 
+asm
+ volatile("outw %0,%1\n\t"
+
+12 :"a"(
+v®ue
+),"dN"(
+pÜt
+));
+
+13 
+	}
+}
+
+15 
+šlše
+ 
+ušt8_t
+ 
+	$šb
+(
+ušt16_t
+ 
+pÜt
+) {
+
+16 
+ušt8_t
+ 
+v®ue
+;
+
+17 
+asm
+ volatile("inb %1,%0\n\t"
+
+18 :"÷"(
+v®ue
+)
+
+19 :"dN"(
+pÜt
+));
+
+20  
+v®ue
+;
+
+21 
+	}
+}
+
+23 
+šlše
+ 
+ušt16_t
+ 
+	$šw
+(
+ušt16_t
+ 
+pÜt
+) {
+
+24 
+ušt16_t
+ 
+v®ue
+;
+
+25 
+asm
+ volatile("inw %1,%0\n\t"
+
+26 :"÷"(
+v®ue
+)
+
+27 :"dN"(
+pÜt
+));
+
+28  
+v®ue
+;
+
+29 
+	}
+}
+
+	@include/asm.h
+
+1 #iâdeà
+_ASM_H
+
+
+2 
+	#_ASM_H
+
+
+	)
+
+3 
+	~"ty³s.h
+"
+
+5 
+outb
+(
+ušt16_t
+ 
+pÜt
+,
+ušt8_t
+ 
+v®ue
+);
+
+7 
+outw
+(
+ušt16_t
+ 
+pÜt
+,ušt16_ˆ
+v®ue
+);
+
+9 
+ušt8_t
+ 
+šb
+(
+ušt16_t
+ 
+pÜt
+);
+
+11 
+ušt16_t
+ 
+šw
+(ušt16_ˆ
+pÜt
+);
+
+	@include/types.h
+
+1 #iâdeà
+_TYPES_H_
+
+
+2 
+	#_TYPES_H_
+
+
+	)
+
+4 #iâdeà
+NULL
+
+
+5 
+	#NULL
+ 0
+
+	)
+
+8 #iâdeà
+TRUE
+
+
+9 
+	#TRUE
+ 1
+
+	)
+
+10 
+	#FALSE
+ 0
+
+	)
+
+13 
+	tušt32_t
+;
+
+14 
+	tušt16_t
+;
+
+15 
+	tušt8_t
+;
+
+	@include/vga.c
+
+1 
+	~"vga.h
+"
+
+2 
+	~"ty³s.h
+"
+
+3 
+	~"asm.h
+"
+
+4 
+ušt16_t
+ *
+	gvga_pos
+ = (uint16_t *)0xb8000;
+
+5 
+ušt8_t
+ 
+	gcursÜ_x
+ = 24;
+
+6 
+ušt8_t
+ 
+	gcursÜ_y
+ = 10;
+
+9 
+	$move_cursÜ
+() {
+
+11 
+ušt16_t
+ 
+cursÜ_loÿtiÚ
+ = 
+cursÜ_y
+ * 80 + 
+cursÜ_x
+;
+
+13 
+	`outb
+(
+vga_i
+, 
+cursÜ_hi
+);
+
+14 
+	`outb
+(
+vga_o
+, 
+cursÜ_loÿtiÚ
+ >> 8);
+
+15 
+	`outb
+(
+vga_i
+, 
+cursÜ_lo
+);
+
+16 
+	`outb
+(
+vga_o
+, 
+cursÜ_loÿtiÚ
+);
+
+17 
+	}
+}
+
+19 
+	$sü“n_þ—r
+() {
+
+20 
+i
+;
+
+21 
+ušt16_t
+ 
+bÏnk
+ = 0x20 | (
+cÞÜ_wh™e
+ << 8);
+
+22 
+i
+ = 0; i < 
+cursÜ_y
+ * 80 + 
+cursÜ_x
+; i++) {
+
+23 
+vga_pos
+[
+i
+] = 
+bÏnk
+;
+
+25 
+cursÜ_x
+ = 0;
+
+26 
+cursÜ_y
+ = 0;
+
+27 
+	`move_cursÜ
+();
+
+28 
+	}
+}
+
+30 
+	$süÞl
+() {
+
+31 
+i
+;
+
+32 
+ušt8_t
+ 
+cÞÜ
+ = (ušt8_t)
+cÞÜ_bÏck
+;
+
+33 
+ušt16_t
+ 
+bÏnk
+ = 0x20 | (
+cÞÜ
+ << 8);
+
+34 ià(
+cursÜ_y
+ >= 25) {
+
+35 
+i
+ = 0; i < 24 * 80; i++) {
+
+36 
+vga_pos
+[
+i
+] = vga_pos[i + 80];
+
+38 
+i
+ = 24 * 80; i< 25 * 80; i++) {
+
+39 
+vga_pos
+[
+i
+] = 
+bÏnk
+;
+
+41 
+cursÜ_y
+ = 24;
+
+43 
+	}
+}
+
+45 
+	$putch
+(
+c
+) {
+
+46 if(
+c
+ == 0x08) {
+
+47 
+vga_pos
+[
+cursÜ_x
+ + 
+cursÜ_y
+ * 80] = 
+cÞÜ_bÏck
+;
+
+48 
+cursÜ_x
+--;
+
+50 if(
+c
+ == 0x09) {
+
+51 
+cursÜ_x
+ = (cursor_x + 8) & 0x1000;
+
+53 if(
+c
+ == '\r') {
+
+54 
+cursÜ_x
+ = 0;
+
+56 if(
+c
+ == '\n') {
+
+57 
+cursÜ_x
+ = 0;
+
+58 
+cursÜ_y
+++;
+
+60 if(
+c
+ == 0x7f) {
+
+61 
+vga_pos
+[
+cursÜ_x
+ + 
+cursÜ_y
+ * 80] = 
+cÞÜ_bÏck
+;
+
+62 
+cursÜ_x
+--;
+
+64 if(
+c
+ >= ' ') {
+
+65 
+vga_pos
+[
+cursÜ_x
+ + 
+cursÜ_y
+ * 80] = 
+c
+ | (
+cÞÜ_wh™e
+ << 8);
+
+66 
+cursÜ_x
+++;
+
+68 
+	`süÞl
+();
+
+69 
+	`move_cursÜ
+();
+
+70 
+	}
+}
+
+72 
+	$puŽše
+(*
+±r
+) {
+
+73 
+cursÜ_x
+ = 1;
+
+74 
+cursÜ_y
+ = 1;
+
+75 *
+±r
+) {
+
+76 
+	`putch
+(*
+±r
+++);
+
+78 
+	}
+}
+
+80 
+	$misc_š™
+() {
+
+81 
+ušt8_t
+ 
+v®
+;
+
+90 
+	}
+}
+
+92 
+	$vga_š™
+() {
+
+93 
+	`misc_š™
+();
+
+94 
+	}
+}
+
+	@include/vga.h
+
+1 #iâdeà
+_VGA_H
+
+
+2 
+	#_VGA_H
+
+
+	)
+
+4 
+	#misc_r
+ 0x3cc
+
+	)
+
+5 
+	#misc_w
+ 0x3c2
+
+	)
+
+7 
+	#cursÜ_hi
+ 0x0c
+
+	)
+
+8 
+	#cursÜ_lo
+ 0x0d
+
+	)
+
+10 
+	#vga_i
+ 0x3d4
+
+	)
+
+11 
+	#vga_o
+ 0x3d5
+
+	)
+
+13 
+	#IOAS
+ 1
+
+	)
+
+14 
+	#cÞÜ_bÏck
+ 0b10000000
+
+	)
+
+15 
+	#cÞÜ_wh™e
+ 0b10001111
+
+	)
+
+16 
+	ecÞÜ
+ {
+
+17 
+	mbÏck
+ = 0,
+
+18 
+	mblue
+ = 1,
+
+19 
+	mg»’
+ = 2,
+
+20 
+	mcyª
+ = 3,
+
+21 
+	m»d
+ = 4,
+
+22 
+	mmag’
+ = 5,
+
+23 
+	mbrown
+ = 6,
+
+24 
+	mwh™e
+ = 7,
+
+25 } 
+	tcÞÜ_t
+;
+
+27 
+sü“n_þ—r
+();
+
+28 
+puŽše
+();
+
+29 
+vga_š™
+();
+
+	@init/init.c
+
+1 
+	~"vga.h
+"
+
+2 
+	$k”n_’Œy
+()
+
+4 
+	`vga_š™
+();
+
+5 
+	`sü“n_þ—r
+();
+
+8 
+	}
+}
+
+	@
+1
+.
+0
+7
+96
+boot/boot.s
+include/asm.c
+include/asm.h
+include/types.h
+include/vga.c
+include/vga.h
+init/init.c
