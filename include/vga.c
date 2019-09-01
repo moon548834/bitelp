@@ -20,7 +20,7 @@ void screen_clear() {
 	color_t white = h_white;
 	uint16_t blank = 0x20 | ( white << 8);
 	for(i = 0; i < cursor_y * 80 + cursor_x; i++) {
-		ga_pos[i] = blank;
+		vga_pos[i] = blank;
 	}
 	cursor_x = 0;
 	cursor_y = 0;
@@ -80,14 +80,14 @@ void putline(char *ptr) {
 
 static void misc_init() {
 	uint8_t val;
-//	val = inb(misc_r);
-/*	if(val & (uint8_t)IOAS == 0) {
+	val = inb(misc_r);
+	if(val & (uint8_t)IOAS == 0) {
 		// test the IOAS bit
 		// mapped to 0x3dx
 		val |= 1;
 		outb(misc_w,val);
 	}
-*/
+
 }
 
 void vga_init() {
