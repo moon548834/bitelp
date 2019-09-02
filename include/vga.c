@@ -71,8 +71,6 @@ static void putch(char c) {
 }
 
 void putline(char *ptr) {
-	cursor_x = 1;
-	cursor_y = 1;
 	while(*ptr) {
 		putch(*ptr++);
 	}
