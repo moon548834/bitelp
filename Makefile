@@ -38,7 +38,9 @@ update_image:
 .PHONY:qemu
 qemu:
 	qemu-system-i386 -fda floppy.img -boot a
-
+.PHONY:gdb_debug
+gdb_debug:
+	qemu-system-i386 -fda floppy.img -boot a -S -s
 
 .PHONY:clean
 clean:
