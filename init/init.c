@@ -15,8 +15,9 @@ int kern_entry()
 
 int test() {
 	int res;
+	int x = 0;
 	assert(string_test());
 	assert(printk_test());
-	assert(0);
+	assert(x);
 	return 1;
 }
