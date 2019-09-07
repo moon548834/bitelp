@@ -1,7 +1,11 @@
 ./include/vga.c
+./include/vargs.h
+./include/string.c
 ./include/asm.c
 ./include/vga.h
+./include/string.h
 ./include/asm.h
 ./include/types.h
 ./boot/boot.s
 ./init/init.c
+./kern/debug/printk.c

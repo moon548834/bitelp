@@ -1,7 +1,5 @@
-#include "vargs.h"
-#include "types.h"
-#include "string.h"
-#include "vga.h"
+#include "debug.h"
+
 static int vsprintf(char *buff, const char *format, va_list args);
 
 void printk(const char *format, ...) 
@@ -15,8 +13,6 @@ void printk(const char *format, ...)
 	buff[i] = '\0';
 	putline(buff);
 }
-
-
 
 #define do_div(n,base) ({ \
 	int __res;           \

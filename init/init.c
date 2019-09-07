@@ -1,21 +1,21 @@
 #include "vga.h"
 #include "string.h"
+#include "test.h"
 
-void string_test();
+int test();
 
 int kern_entry()
 {
-	vga_init();
-	
-	
+	vga_init();	
 	screen_clear();
 	putline("Hello world!\nbitelp is running!\n");	
-	string_test();
+	test();
 	return 0;
 }
 
-void string_test() {
-	char *s1 = "apple";
-	char *s2 = "banana";
-	if(strcmp(s1,s2) == -1) putline("string test is done!\n");
+int test() {
+	int res;
+	res = string_test();
+	res = printk_test();
+	return res;
 }
