@@ -1,4 +1,6 @@
 ./include/vga.c
+./include/test.h
+./include/debug.h
 ./include/vargs.h
 ./include/string.c
 ./include/asm.c
@@ -7,5 +9,6 @@
 ./include/asm.h
 ./include/types.h
 ./boot/boot.s
+./test/test.c
 ./init/init.c
 ./kern/debug/printk.c

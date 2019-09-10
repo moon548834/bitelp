@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/github/bitelp -q 0000000147 0000008265
+cscope 15 $HOME/work/github/bitelp -q 0000000157 0000008966
 	@boot/boot.s
 
 2 
@@ -411,6 +411,62 @@ uöt16_t
 p‹t
 );
 
+	@include/debug.h
+
+1 #i‚de‡
+_DEBUG_H
+
+
+2 
+	#_DEBUG_H
+
+
+	)
+
+4 
+	~"v¨gs.h
+"
+
+5 
+	~"ty≥s.h
+"
+
+6 
+	~"°rög.h
+"
+
+7 
+	~"vga.h
+"
+
+9 
+	#as£π
+(
+x
+) \
+
+11 i‡(!
+x
+) { \
+
+12 
+	`¥ötk
+("As£πi⁄ faûed: %†fûê%s,Üöê%d\n", \
+
+	)
+
+13 #x,
+__FILE__
+,
+__LINE__
+); \
+
+17 
+¥ötk
+(c⁄° *
+f‹m©
+, ...);
+
 	@include/string.c
 
 1 
@@ -670,6 +726,42 @@ de°
 , c⁄° *
 °r2
 );
+
+	@include/test.h
+
+1 #i‚de‡
+_TEST_H
+
+
+2 
+	#_TEST_H
+
+
+	)
+
+4 
+	~"°rög.h
+"
+
+5 
+	~"ty≥s.h
+"
+
+6 
+	~"vga.h
+"
+
+7 
+	~"debug.h
+"
+
+9 
+°rög_ã°
+();
+
+10 
+¥ötk_ã°
+();
 
 	@include/types.h
 
@@ -1333,79 +1425,73 @@ vga_öô
 	~"°rög.h
 "
 
-4 
-°rög_ã°
+3 
+	~"ã°.h
+"
+
+5 
+ã°
 ();
 
-6 
+7 
 	$kîn_íåy
 ()
 
-8 
+9 
 	`vga_öô
 ();
 
-11 
+10 
 	`s¸ìn_˛ór
 ();
 
-12 
+11 
 	`puéöe
 ("Hello world!\nbitelp isÑunning!\n");
 
-13 
-	`°rög_ã°
+12 
+	`ã°
 ();
 
-15 
+14 
 	}
 }
 
-17 
-	$°rög_ã°
+16 
+	$ã°
 () {
 
-18 *
-s1
- = "apple";
+17 
+ªs
+;
 
-19 *
-s2
- = "banana";
+18 
+x
+ = 0;
 
-20 if(
-	`°rcmp
+19 
+	`as£π
 (
-s1
-,
-s2
-Ë=-1Ë
-	`puéöe
-("stringÅest is done!\n");
+	`°rög_ã°
+());
 
-21 
+20 
+	`as£π
+(
+	`¥ötk_ã°
+());
+
+22 
 	}
 }
 
 	@kern/debug/printk.c
 
 1 
-	~"v¨gs.h
+	~"debug.h
 "
 
-2 
-	~"ty≥s.h
-"
-
-3 
-	~"°rög.h
-"
-
-4 
-	~"vga.h
-"
-
-5 
+3 
 v•rötf
 (*
 buff
@@ -1417,27 +1503,27 @@ va_li°
 ¨gs
 );
 
-7 
+5 
 	$¥ötk
 (c⁄° *
 f‹m©
 , ...)
 
-9 
+7 
 buff
 [1024];
 
-10 
+8 
 va_li°
  
 ¨gs
 ;
 
-11 
+9 
 i
 ;
 
-12 
+10 
 	`va_°¨t
 (
 ¨gs
@@ -1445,7 +1531,7 @@ i
 f‹m©
 );
 
-13 
+11 
 i
  = 
 	`v•rötf
@@ -1457,29 +1543,29 @@ f‹m©
 ¨gs
 );
 
-14 
+12 
 	`va_íd
 (
 ¨gs
 );
 
-15 
+13 
 buff
 [
 i
 ] = '\0';
 
-16 
+14 
 	`puéöe
 (
 buff
 );
 
-17 
+15 
 	}
 }
 
-21 
+17 
 	#do_div
 (
 n
@@ -1487,11 +1573,11 @@ n
 ba£
 ) ({ \
 
-22 
+18 
 __ªs
 ; \
 
-23 
+19 
 	`__asm__
 ("div»%4\n\t" :"˜"(
 n
@@ -1503,11 +1589,11 @@ ba£
 
 	)
 
-24 
+20 
 	g__ªs
 ; })
 
-26 *
+22 *
 	$numbî
 (*
 °r
@@ -1517,37 +1603,37 @@ num
 ba£
 )
 
-28 c⁄° *
+24 c⁄° *
 digôs
  = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-29 
+25 
 tmp
 [36];
 
-30 
+26 
 i
 ;
 
-31 
+27 
 i
  = 0;
 
-32 if(
+28 if(
 num
  == 0)
 
-33 
+29 
 tmp
 [
 i
 ++] = '0';
 
-35 
+31 
 num
  != 0)
 
-36 
+32 
 tmp
 [
 i
@@ -1561,11 +1647,11 @@ num
 ba£
 )];
 
-38 
+34 
 i
 -- > 0)
 
-39 *
+35 *
 °r
 ++ =
 tmp
@@ -1573,15 +1659,15 @@ tmp
 i
 ];
 
-40  
+36  
 °r
 ;
 
-41 
+37 
 	}
 }
 
-44 
+40 
 	$v•rötf
 (*
 buff
@@ -1593,23 +1679,23 @@ va_li°
 ¨gs
 )
 
-46 *
+42 *
 s
 ;
 
-47 *
+43 *
 °r
 ;
 
-48 
+44 
 Àn
 ;
 
-49 
+45 
 i
 ;
 
-50 
+46 
 °r
  = 
 buff
@@ -1617,25 +1703,25 @@ buff
 f‹m©
 ; format++) {
 
-51 if(*
+47 if(*
 f‹m©
  != '%') {
 
-52 *
+48 *
 °r
 ++ = *
 f‹m©
 ;
 
-55 ++
+51 ++
 f‹m©
 ;
 
-56 *
+52 *
 f‹m©
 ) {
 
-58 *
+54 *
 °r
 ++ = (
 uöt8_t
@@ -1645,7 +1731,7 @@ uöt8_t
 ¨gs
 ,);
 
-61 
+57 
 s
  = 
 	`va_¨g
@@ -1653,7 +1739,7 @@ s
 ¨gs
 , *);
 
-62 
+58 
 Àn
  = 
 	`°æí
@@ -1661,19 +1747,19 @@ s
 s
 );
 
-63 
+59 
 i
  = 0; i < 
 Àn
 ; i++)
 
-64 *
+60 *
 °r
 ++ = *
 s
 ++;
 
-68 
+64 
 °r
  = 
 	`numbî
@@ -1685,7 +1771,7 @@ s
 uöt32_t
 ), 10);
 
-72 
+68 
 °r
  = 
 	`numbî
@@ -1697,17 +1783,79 @@ uöt32_t
 uöt32_t
 ), 16);
 
-78 *
+74 *
 °r
  = '\0';
 
-79  ()(
+75  ()(
 °r
  - 
 buff
 );
 
-80 
+76 
+	}
+}
+
+	@test/test.c
+
+1 
+	~"ã°.h
+"
+
+3 
+	$°rög_ã°
+()
+
+5 *
+s1
+ = "apple";
+
+6 *
+s2
+ = "banana";
+
+7 if(
+	`°rcmp
+(
+s1
+,
+s2
+Ë=-1Ë
+	`puéöe
+("stringÅest is done!\n");
+
+9 
+	}
+}
+
+11 
+	$¥ötk_ã°
+()
+
+13 
+s
+[10] = "abcd";
+
+14 
+	`¥ötk
+("s[0] i†:%¯s[1] i†:%¯\n",
+s
+[0],s[1]);
+
+15 
+	`¥ötk
+("s[0]ásciòi†:%d\n",
+s
+[0]);
+
+16 
+	`¥ötk
+("†i†%s\n",
+s
+);
+
+18 
 	}
 }
 
@@ -1715,16 +1863,19 @@ buff
 1
 .
 0
-11
-166
+14
+209
 boot/boot.s
 include/asm.c
 include/asm.h
+include/debug.h
 include/string.c
 include/string.h
+include/test.h
 include/types.h
 include/vargs.h
 include/vga.c
 include/vga.h
 init/init.c
 kern/debug/printk.c
+test/test.c

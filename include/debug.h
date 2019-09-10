@@ -16,5 +16,11 @@
 
 void printk(const char *format, ...);
 
+void init_debug();
+
+void panic(const char *msg);
+
+void print_cur_status();
+
 
 #endif

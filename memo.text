@@ -14,3 +14,11 @@ d: d reg
 S: si reg
 D: di reg
 N: u8 constant (for in and out insts)
+
+cdecl: 
+argument-passing order                        right to left
+stack-maintenance responsibility              calling function pops the arguments from the stack
+name-decoration convention                    underscore character(_) is prefixed to names, except when __cdecl functions that use C linkage are exported.
+case-translation convention                   no case translation performed.
+
+Note that in a 64-bit environment, functions are not decorated.

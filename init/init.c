@@ -18,6 +18,5 @@ int test() {
 	int x = 0;
 	assert(string_test());
 	assert(printk_test());
-	assert(x);
 	return 1;
 }
