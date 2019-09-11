@@ -29,8 +29,6 @@ link:
 .PHONY:update_image
 update_image:
 	sudo mount floppy.img /mnt/boot/grub
-	sudo cp bitelp /mnt/boot
-	sudo cp bitelp /mnt/boot/grub
 	sudo cp bitelp /mnt/boot/grub/boot
 	sleep 1
 	sudo umount /mnt/boot/grub

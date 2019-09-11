@@ -9,7 +9,7 @@ int kern_entry()
 	vga_init();	
 	debug_init();
 	screen_clear();
-	putline("Hello world!\nbitelp is running!\n");	
+	putline("Hello world!\nbitelp OS is running!\n");	
 	test();
 	panic("test panic!\n");
 	return 0;

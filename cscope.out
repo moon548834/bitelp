@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/github/bitelp -q 0000000224 0000013121
+cscope 15 $HOME/work/github/bitelp -q 0000000224 0000013144
 	@boot/boot.s
 
 2 
@@ -468,7 +468,7 @@ fÜm©
 , ...);
 
 19 
-š™_debug
+debug_š™
 ();
 
 21 
@@ -1882,50 +1882,54 @@ vga_š™
 ();
 
 10 
-	`sü“n_ş—r
+	`debug_š™
 ();
 
 11 
-	`puše
-("Hello world!\nbitelp is„unning!\n");
+	`sü“n_ş—r
+();
 
 12 
+	`puše
+("Hello world!\nbitelp OS is„unning!\n");
+
+13 
 	`‹¡
 ();
 
-13 
+14 
 	`·nic
 ("test…anic!\n");
 
-15 
+16 
 	}
 }
 
-17 
+18 
 	$‹¡
 () {
 
-18 
+19 
 »s
 ;
 
-19 
+20 
 x
  = 0;
 
-20 
+21 
 	`as£¹
 (
 	`¡ršg_‹¡
 ());
 
-21 
+22 
 	`as£¹
 (
 	`´štk_‹¡
 ());
 
-23 
+24 
 	}
 }
 
@@ -1950,7 +1954,7 @@ x
 ;
 
 8 
-	$š™_debug
+	$debug_š™
 ()
 
 11 
@@ -2067,15 +2071,15 @@ msg
 	`´štk
 ("***\n");
 
-42 
+40 
 	}
 }
 
-44 
+42 
 	$´št_¡ack_Œaû
 ()
 
-46 
+44 
 ušt32_t
  *
 ebp
@@ -2083,23 +2087,23 @@ ebp
 e
 ;
 
-48 
+46 
 asm
  vŞ©("mov %%ebp, %0" : "ô" (
 ebp
 ));
 
-49 
+47 
 ebp
 ) {
 
-50 
+48 
 e
  = 
 ebp
  + 1;
 
-51 
+49 
 	`´štk
 (" [0x%x] %s\n", *
 e
@@ -2109,13 +2113,13 @@ e
 k”Ãl_–f
 ));
 
-52 
+50 
 ebp
  = (
 ušt32_t
 *)*ebp;
 
-54 
+52 
 	}
 }
 
