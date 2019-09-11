@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/github/bitelp -q 0000000157 0000008966
+cscope 15 $HOME/work/github/bitelp -q 0000000224 0000013121
 	@boot/boot.s
 
 2 
@@ -466,6 +466,446 @@ __LINE__
 (c⁄° *
 f‹m©
 , ...);
+
+19 
+öô_debug
+();
+
+21 
+∑nic
+(c⁄° *
+msg
+);
+
+23 
+¥öt_cur_°©us
+();
+
+	@include/elf.h
+
+1 #i‚de‡
+INCLUDE_ELF_H_
+
+
+2 
+	#INCLUDE_ELF_H_
+
+
+	)
+
+4 
+	~"ty≥s.h
+"
+
+5 
+	~"mu…iboŸ.h
+"
+
+7 
+	#ELF32_ST_TYPE
+(
+i
+Ë((i)&0xf)
+
+	)
+
+11 
+	sñf_£˘i⁄_hódî_t
+ {
+
+12 
+uöt32_t
+ 
+	m«me
+;
+
+13 
+uöt32_t
+ 
+	mty≥
+;
+
+14 
+uöt32_t
+ 
+	mÊags
+;
+
+15 
+uöt32_t
+ 
+	maddr
+;
+
+16 
+uöt32_t
+ 
+	moff£t
+;
+
+17 
+uöt32_t
+ 
+	msize
+;
+
+18 
+uöt32_t
+ 
+	mlök
+;
+
+19 
+uöt32_t
+ 
+	möfo
+;
+
+20 
+uöt32_t
+ 
+	maddølign
+;
+
+21 
+uöt32_t
+ 
+	mítsize
+;
+
+22 } 
+	t__©åibuã__
+((
+	t∑cked
+)Ë
+	tñf_£˘i⁄_hódî_t
+;
+
+26 
+	sñf_symbﬁ_t
+ {
+
+27 
+uöt32_t
+ 
+	m«me
+;
+
+28 
+uöt32_t
+ 
+	mvÆue
+;
+
+29 
+uöt32_t
+ 
+	msize
+;
+
+30 
+uöt8_t
+ 
+	möfo
+;
+
+31 
+uöt8_t
+ 
+	mŸhî
+;
+
+32 
+uöt16_t
+ 
+	mshndx
+;
+
+33 } 
+	t__©åibuã__
+((
+	t∑cked
+)Ë
+	tñf_symbﬁ_t
+;
+
+37 
+	sñf_t
+ {
+
+38 
+ñf_symbﬁ_t
+ *
+	msymèb
+;
+
+39 
+uöt32_t
+ 
+	msymèbsz
+;
+
+40 c⁄° *
+	m°πab
+;
+
+41 
+uöt32_t
+ 
+	m°πabsz
+;
+
+42 } 
+	tñf_t
+;
+
+45 
+ñf_t
+ 
+ñf_‰om_mu…iboŸ
+(
+mu…iboŸ_t
+ *
+mb
+);
+
+48 c⁄° *
+ñf_lookup_symbﬁ
+(
+uöt32_t
+ 
+addr
+, 
+ñf_t
+ *
+ñf
+);
+
+	@include/multiboot.h
+
+1 #i‚de‡
+INCLUDE_MULTIBOOT_H_
+
+
+2 
+	#INCLUDE_MULTIBOOT_H_
+
+
+	)
+
+4 
+	~"ty≥s.h
+"
+
+7 
+	smu…iboŸ_t
+ {
+
+8 
+uöt32_t
+ 
+	mÊags
+;
+
+17 
+uöt32_t
+ 
+	mmem_lowî
+;
+
+18 
+uöt32_t
+ 
+	mmem_uµî
+;
+
+20 
+uöt32_t
+ 
+	mboŸ_devi˚
+;
+
+21 
+uöt32_t
+ 
+	mcmdlöe
+;
+
+22 
+uöt32_t
+ 
+	mmods_cou¡
+;
+
+23 
+uöt32_t
+ 
+	mmods_addr
+;
+
+29 
+uöt32_t
+ 
+	mnum
+;
+
+30 
+uöt32_t
+ 
+	msize
+;
+
+31 
+uöt32_t
+ 
+	maddr
+;
+
+32 
+uöt32_t
+ 
+	mshndx
+;
+
+39 
+uöt32_t
+ 
+	mmm≠_Àngth
+;
+
+40 
+uöt32_t
+ 
+	mmm≠_addr
+;
+
+42 
+uöt32_t
+ 
+	mdrives_Àngth
+;
+
+43 
+uöt32_t
+ 
+	mdrives_addr
+;
+
+44 
+uöt32_t
+ 
+	mc⁄fig_èbÀ
+;
+
+45 
+uöt32_t
+ 
+	mboŸ_lﬂdî_«me
+;
+
+46 
+uöt32_t
+ 
+	m≠m_èbÀ
+;
+
+47 
+uöt32_t
+ 
+	mvbe_c⁄åﬁ_öfo
+;
+
+48 
+uöt32_t
+ 
+	mvbe_mode_öfo
+;
+
+49 
+uöt32_t
+ 
+	mvbe_mode
+;
+
+50 
+uöt32_t
+ 
+	mvbe_öãrÁ˚_£g
+;
+
+51 
+uöt32_t
+ 
+	mvbe_öãrÁ˚_off
+;
+
+52 
+uöt32_t
+ 
+	mvbe_öãrÁ˚_Àn
+;
+
+53 } 
+	t__©åibuã__
+((
+	t∑cked
+)Ë
+	tmu…iboŸ_t
+;
+
+62 
+	smm≠_íåy_t
+ {
+
+63 
+uöt32_t
+ 
+	msize
+;
+
+64 
+uöt32_t
+ 
+	mba£_addr_low
+;
+
+65 
+uöt32_t
+ 
+	mba£_addr_high
+;
+
+66 
+uöt32_t
+ 
+	mÀngth_low
+;
+
+67 
+uöt32_t
+ 
+	mÀngth_high
+;
+
+68 
+uöt32_t
+ 
+	mty≥
+;
+
+69 } 
+	t__©åibuã__
+((
+	t∑cked
+)Ë
+	tmm≠_íåy_t
+;
+
+72 
+mu…iboŸ_t
+ *
+glb_mboŸ_±r
+;
 
 	@include/string.c
 
@@ -1453,35 +1893,229 @@ vga_öô
 	`ã°
 ();
 
-14 
+13 
+	`∑nic
+("testÖanic!\n");
+
+15 
 	}
 }
 
-16 
+17 
 	$ã°
 () {
 
-17 
+18 
 ªs
 ;
 
-18 
+19 
 x
  = 0;
 
-19 
+20 
 	`as£π
 (
 	`°rög_ã°
 ());
 
-20 
+21 
 	`as£π
 (
 	`¥ötk_ã°
 ());
 
-22 
+23 
+	}
+}
+
+	@kern/debug/debug.c
+
+1 
+	~"debug.h
+"
+
+2 
+	~"ñf.h
+"
+
+4 
+¥öt_°ack_åa˚
+();
+
+6 
+ñf_t
+ 
+	gkî√l_ñf
+;
+
+8 
+	$öô_debug
+()
+
+11 
+kî√l_ñf
+ = 
+	`ñf_‰om_mu…iboŸ
+(
+glb_mboŸ_±r
+);
+
+12 
+	}
+}
+
+14 
+	$¥öt_cur_°©us
+()
+
+16 
+round
+ = 0;
+
+17 
+uöt16_t
+ 
+ªg1
+, 
+ªg2
+, 
+ªg3
+, 
+ªg4
+;
+
+19 
+asm
+ volatile ( "mov %%cs, %0;"
+
+23 : "=m"(
+ªg1
+), "=m"(
+ªg2
+), "=m"(
+ªg3
+), "=m"(
+ªg4
+));
+
+26 
+	`¥ötk
+("%d: @rög %d\n", 
+round
+, 
+ªg1
+ & 0x3);
+
+27 
+	`¥ötk
+("%d: c†%x\n", 
+round
+, 
+ªg1
+);
+
+28 
+	`¥ötk
+("%d: d†%x\n", 
+round
+, 
+ªg2
+);
+
+29 
+	`¥ötk
+("%d:É†%x\n", 
+round
+, 
+ªg3
+);
+
+30 
+	`¥ötk
+("%d: s†%x\n", 
+round
+, 
+ªg4
+);
+
+31 ++
+round
+;
+
+32 
+	}
+}
+
+34 
+	$∑nic
+(c⁄° *
+msg
+)
+
+36 
+	`¥ötk
+("*** Sy°emÖ™ic: %s\n", 
+msg
+);
+
+37 
+	`¥öt_°ack_åa˚
+();
+
+38 
+	`¥ötk
+("***\n");
+
+42 
+	}
+}
+
+44 
+	$¥öt_°ack_åa˚
+()
+
+46 
+uöt32_t
+ *
+ebp
+, *
+eù
+;
+
+48 
+asm
+ vﬁ©ûê("mov %%ebp, %0" : "Ù" (
+ebp
+));
+
+49 
+ebp
+) {
+
+50 
+eù
+ = 
+ebp
+ + 1;
+
+51 
+	`¥ötk
+(" [0x%x] %s\n", *
+eù
+, 
+	`ñf_lookup_symbﬁ
+(*eù, &
+kî√l_ñf
+));
+
+52 
+ebp
+ = (
+uöt32_t
+*)*ebp;
+
+54 
 	}
 }
 
@@ -1797,6 +2431,226 @@ buff
 	}
 }
 
+	@lib/elf.c
+
+1 
+	~"asm.h
+"
+
+2 
+	~"°rög.h
+"
+
+3 
+	~"ñf.h
+"
+
+6 
+ñf_t
+ 
+	$ñf_‰om_mu…iboŸ
+(
+mu…iboŸ_t
+ *
+mb
+)
+
+8 
+i
+;
+
+9 
+ñf_t
+ 
+ñf
+;
+
+10 
+ñf_£˘i⁄_hódî_t
+ *
+sh
+ = (ñf_£˘i⁄_hódî_t*)
+mb
+->
+addr
+;
+
+12 
+uöt32_t
+ 
+sh°πab
+ = 
+sh
+[
+mb
+->
+shndx
+].
+addr
+;
+
+13 
+i
+ = 0; i < 
+mb
+->
+num
+; i++) {
+
+14 c⁄° *
+«me
+ = (c⁄° *)(
+sh°πab
+ + 
+sh
+[
+i
+].name);
+
+16 i‡(
+	`°rcmp
+(
+«me
+, ".strtab") == 0) {
+
+17 
+ñf
+.
+°πab
+ = (c⁄° *)
+sh
+[
+i
+].
+addr
+;
+
+18 
+ñf
+.
+°πabsz
+ = 
+sh
+[
+i
+].
+size
+;
+
+20 i‡(
+	`°rcmp
+(
+«me
+, ".symtab") == 0) {
+
+21 
+ñf
+.
+symèb
+ = (
+ñf_symbﬁ_t
+*)
+sh
+[
+i
+].
+addr
+;
+
+22 
+ñf
+.
+symèbsz
+ = 
+sh
+[
+i
+].
+size
+;
+
+26  
+ñf
+;
+
+27 
+	}
+}
+
+30 c⁄° *
+	$ñf_lookup_symbﬁ
+(
+uöt32_t
+ 
+addr
+, 
+ñf_t
+ *
+ñf
+)
+
+32 
+i
+;
+
+34 
+i
+ = 0; i < (
+ñf
+->
+symèbsz
+ / (
+ñf_symbﬁ_t
+)); i++) {
+
+35 i‡(
+	`ELF32_ST_TYPE
+(
+ñf
+->
+symèb
+[
+i
+].
+öfo
+) != 0x2) {
+
+39 i‡–(
+addr
+ >
+ñf
+->
+symèb
+[
+i
+].
+vÆue
+Ë&& (add∏< (ñf->symèb[i].vÆuê+Élf->symèb[i].
+size
+)) ) {
+
+40  (c⁄° *)((
+uöt32_t
+)
+ñf
+->
+°πab
+ +Élf->
+symèb
+[
+i
+].
+«me
+);
+
+44  
+NULL
+;
+
+45 
+	}
+}
+
 	@test/test.c
 
 1 
@@ -1863,12 +2717,14 @@ s
 1
 .
 0
-14
-209
+18
+272
 boot/boot.s
 include/asm.c
 include/asm.h
 include/debug.h
+include/elf.h
+include/multiboot.h
 include/string.c
 include/string.h
 include/test.h
@@ -1877,5 +2733,7 @@ include/vargs.h
 include/vga.c
 include/vga.h
 init/init.c
+kern/debug/debug.c
 kern/debug/printk.c
+lib/elf.c
 test/test.c

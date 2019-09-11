@@ -16,7 +16,7 @@
 
 void printk(const char *format, ...);
 
-void init_debug();
+void debug_init();
 
 void panic(const char *msg);
 

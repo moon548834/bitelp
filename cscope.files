@@ -1,6 +1,8 @@
 ./include/vga.c
+./include/elf.h
 ./include/test.h
 ./include/debug.h
+./include/multiboot.h
 ./include/vargs.h
 ./include/string.c
 ./include/asm.c
@@ -11,4 +13,6 @@
 ./boot/boot.s
 ./test/test.c
 ./init/init.c
+./lib/elf.c
+./kern/debug/debug.c
 ./kern/debug/printk.c

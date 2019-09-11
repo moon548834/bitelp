@@ -7,9 +7,11 @@ int test();
 int kern_entry()
 {
 	vga_init();	
+	debug_init();
 	screen_clear();
 	putline("Hello world!\nbitelp is running!\n");	
 	test();
+	panic("test panic!\n");
 	return 0;
 }
 
