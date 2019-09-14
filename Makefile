@@ -18,10 +18,10 @@ all: $(S_OBJECTS) $(C_OBJECTS) link update_image
 print:
 	echo $(C_OBJECTS) 
 %.o:%.c
-	@echo compiling $<
+	@echo compiling $< ...
 	$(CC) $(C_FLAGS) $< -o $@
 %.o:%.s
-	@echo compiling $< 
+	@echo compiling $< ... 
 	$(ASM) $(ASM_FLAGS) $<
 link:
 	$(LD) $(LD_FLAGS) $(S_OBJECTS) $(C_OBJECTS) -o bitelp
