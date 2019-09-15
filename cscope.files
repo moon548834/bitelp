@@ -5,6 +5,7 @@
 ./include/multiboot.h
 ./include/vargs.h
 ./include/string.c
+./include/gdt.h
 ./include/asm.c
 ./include/vga.h
 ./include/string.h
@@ -14,5 +15,7 @@
 ./test/test.c
 ./init/init.c
 ./lib/elf.c
+./kern/gdt.c
 ./kern/debug/debug.c
 ./kern/debug/printk.c
+./kern/gdt_f.s

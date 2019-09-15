@@ -44,7 +44,7 @@ typedef struct gdt_ptr_t {
 	uint32_t base;
 } __attribute__((packed)) gdt_ptr_t;
 
-void init_gdt();
+void gdt_init();
 
 extern void gdt_flush(uint32_t); //assembly
 

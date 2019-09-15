@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/github/bitelp -q 0000000224 0000013144
+cscope 15 $HOME/work/github/bitelp -q 0000000257 0000015175
 	@boot/boot.s
 
 2 
@@ -679,6 +679,132 @@ addr
 –f_t
  *
 –f
+);
+
+	@include/gdt.h
+
+1 #iâdeà
+_GDT_H
+
+
+2 
+	#_GDT_H
+
+
+	)
+
+4 
+	~"ty³s.h
+"
+
+20 
+	#STA_X
+ 0x8
+
+21 
+	#STA_E
+ 0x4
+
+22 
+	#STA_C
+ 0x4
+
+23 
+	#STA_W
+ 0x2
+
+24 
+	#STA_R
+ 0x2
+
+25 
+	#STA_A
+ 0x1
+
+26 
+
+	)
+
+29 
+	sgdt_’Œy_t
+ {
+
+30 
+ušt16_t
+ 
+	mlim™_low
+;
+
+31 
+ušt16_t
+ 
+	mba£_low
+;
+
+32 
+ušt8_t
+ 
+	mba£_mid
+;
+
+33 
+ušt8_t
+ 
+	macûss
+;
+
+34 
+ušt8_t
+ 
+	mg¿nu
+;
+
+35 
+ušt8_t
+ 
+	mba£_hi
+;
+
+38 } 
+	t__©Œibu‹__
+((
+	t·cked
+)è
+	tgdt_’Œy_t
+;
+
+42 
+	sgdt_±r_t
+ {
+
+43 
+ušt16_t
+ 
+	mlim™
+;
+
+44 
+ušt32_t
+ 
+	mba£
+;
+
+45 } 
+	t__©Œibu‹__
+((
+	t·cked
+)è
+	tgdt_±r_t
+;
+
+47 
+gdt_š™
+();
+
+49 
+gdt_æush
+(
+ušt32_t
 );
 
 	@include/multiboot.h
@@ -1869,67 +1995,75 @@ vga_š™
 	~"‹¡.h
 "
 
-5 
+4 
+	~"gdt.h
+"
+
+6 
 ‹¡
 ();
 
-7 
+8 
 	$k”n_’Œy
 ()
 
-9 
+10 
 	`vga_š™
 ();
 
-10 
+11 
 	`debug_š™
 ();
 
-11 
+12 
+	`gdt_š™
+();
+
+13 
 	`sü“n_þ—r
 ();
 
-12 
+14 
 	`puŽše
 ("Hello world!\nbitelp OS is„unning!\n");
 
-13 
+15 
 	`‹¡
 ();
 
-14 
+16 
 	`·nic
 ("test…anic!\n");
 
-16 
+18 
 	}
 }
 
-18 
+20 
 	$‹¡
 () {
 
-19 
+21 
 »s
 ;
 
-20 
+22 
 x
  = 0;
 
-21 
+23 
 	`as£¹
 (
 	`¡ršg_‹¡
 ());
 
-22 
+24 
 	`as£¹
 (
 	`´štk_‹¡
 ());
 
-24 
+26 
 	}
 }
 
@@ -2435,6 +2569,292 @@ buff
 	}
 }
 
+	@kern/gdt.c
+
+1 
+	~"gdt.h
+"
+
+2 
+	~"¡ršg.h
+"
+
+4 
+	#GDT_LENGTH
+ 5
+
+	)
+
+6 
+gdt_’Œy_t
+ 
+	ggdt_’Œ›s
+[
+GDT_LENGTH
+];
+
+8 
+gdt_±r_t
+ 
+	ggdt_±r
+;
+
+10 
+gdt_£t_g©e
+(
+ušt32_t
+ 
+num
+, ušt32_ˆ
+ba£
+, ušt32_ˆ
+lim™
+,
+
+11 
+ušt8_t
+ 
+acûss
+, ušt8_ˆ
+g¿nu
+);
+
+13 
+	$gdt_š™
+()
+
+15 
+gdt_±r
+.
+lim™
+ = (
+gdt_’Œy_t
+è* 
+GDT_LENGTH
+ - 1;
+
+16 
+gdt_±r
+.
+ba£
+ = (
+ušt32_t
+)&
+gdt_’Œ›s
+;
+
+18 
+	`gdt_£t_g©e
+(0, 0, 0, 0, 0);
+
+20 
+	`gdt_£t_g©e
+(1, 0, 0xffffffff, 0x90 | 
+STA_X
+ | 
+STA_R
+, 0xcf);
+
+21 
+	`gdt_£t_g©e
+(2, 0, 0xffffffff, 0x90 | 
+STA_W
+, 0xcf);
+
+22 
+	`gdt_£t_g©e
+(3, 0, 0xffffffff, 0xf0 | 
+STA_X
+ | 
+STA_R
+, 0xcf);
+
+23 
+	`gdt_£t_g©e
+(4, 0, 0xffffffff, 0xf0 | 
+STA_W
+, 0xcf);
+
+24 
+	}
+}
+
+26 
+	$gdt_£t_g©e
+(
+ušt32_t
+ 
+num
+, ušt32_ˆ
+ba£
+, ušt32_ˆ
+lim™
+,
+
+27 
+ušt8_t
+ 
+acûss
+, ušt8_ˆ
+g¿nu
+)
+
+29 
+gdt_’Œ›s
+[
+num
+].
+ba£_low
+ = 
+ba£
+ & 0xffff;
+
+30 
+gdt_’Œ›s
+[
+num
+].
+ba£_mid
+ = (
+ba£
+ >> 16) & 0xff;
+
+31 
+gdt_’Œ›s
+[
+num
+].
+ba£_hi
+ = (
+ba£
+ >> 24) & 0xff;
+
+33 
+gdt_’Œ›s
+[
+num
+].
+lim™_low
+ = (
+lim™
+ & 0xffff);
+
+34 
+gdt_’Œ›s
+[
+num
+].
+g¿nu
+ = (
+lim™
+ >> 16) & 0x0f;
+
+36 
+gdt_’Œ›s
+[
+num
+].
+g¿nu
+ |= granu & 0xf0;
+
+37 
+gdt_’Œ›s
+[
+num
+].
+acûss
+ =‡ccess;
+
+38 
+	}
+}
+
+	@kern/gdt_f.s
+
+1 [
+GLOBAL
+ 
+gdt_æush
+]
+
+3 
+	ggdt_æush
+:
+
+4 
+mov
+ 
+—x
+, [
+e¥
++4]
+
+5 
+	glgdt
+ [
+—x
+]
+
+7 
+mov
+ 
+	gax
+, 0x10
+
+8 
+mov
+ 
+	gds
+, 
+ax
+
+
+9 
+mov
+ 
+	ges
+, 
+ax
+
+
+10 
+mov
+ 
+	gfs
+, 
+ax
+
+
+11 
+mov
+ 
+	ggs
+, 
+ax
+
+
+12 
+mov
+ 
+	gss
+, 
+ax
+
+
+13 
+	gjmp
+ 0x08: .
+æush
+
+
+15 .
+æush
+:
+
+16 
+»t
+
+
 	@lib/elf.c
 
 1 
@@ -2721,13 +3141,14 @@ s
 1
 .
 0
-18
-272
+21
+310
 boot/boot.s
 include/asm.c
 include/asm.h
 include/debug.h
 include/elf.h
+include/gdt.h
 include/multiboot.h
 include/string.c
 include/string.h
@@ -2739,5 +3160,7 @@ include/vga.h
 init/init.c
 kern/debug/debug.c
 kern/debug/printk.c
+kern/gdt.c
+kern/gdt_f.s
 lib/elf.c
 test/test.c

@@ -10,7 +10,7 @@ gdt_ptr_t gdt_ptr;
 static void gdt_set_gate(uint32_t num, uint32_t base, uint32_t limit,
 uint8_t access, uint8_t granu);
 
-void init_gdt()
+void gdt_init()
 {
 	gdt_ptr.limit = sizeof(gdt_entry_t) * GDT_LENGTH - 1;
 	gdt_ptr.base = (uint32_t)&gdt_entries;
@@ -20,7 +20,8 @@ void init_gdt()
 	gdt_set_gate(1, 0, 0xffffffff, 0x90 | STA_X | STA_R, 0xcf); // code
 	gdt_set_gate(2, 0, 0xffffffff, 0x90 | STA_W, 0xcf); // data
 	gdt_set_gate(3, 0, 0xffffffff, 0xf0 | STA_X | STA_R, 0xcf); // user code
-	gdt_set_gate(4, 0, 0xffffffff, 0xf0 | STA_W, 0xcf);
+	gdt_set_gate(4, 0, 0xffffffff, 0xf0 | STA_W, 0xcf); // user data
+	gdt_flush((uint32_t)&gdt_ptr);
 }
 
 static void gdt_set_gate(uint32_t num, uint32_t base, uint32_t limit,

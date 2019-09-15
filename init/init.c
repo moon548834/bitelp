@@ -1,6 +1,7 @@
 #include "vga.h"
 #include "string.h"
 #include "test.h"
+#include "gdt.h"
 
 int test();
 
@@ -8,6 +9,7 @@ int kern_entry()
 {
 	vga_init();	
 	debug_init();
+	gdt_init();
 	screen_clear();
 	putline("Hello world!\nbitelp OS is running!\n");	
 	test();
