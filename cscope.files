@@ -10,6 +10,8 @@
 ./include/vga.h
 ./include/string.h
 ./include/asm.h
+./include/intr.h
+./include/idt.h
 ./include/types.h
 ./boot/boot.s
 ./test/test.c

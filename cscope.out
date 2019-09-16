@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/github/bitelp -q 0000000257 0000015175
+cscope 15 $HOME/work/github/bitelp -q 0000000283 0000016290
 	@boot/boot.s
 
 2 
@@ -806,6 +806,218 @@ gdt_æush
 (
 ušt32_t
 );
+
+	@include/idt.h
+
+1 #iâdeà
+_IDT_H
+
+
+2 
+	#_IDT_H
+
+
+	)
+
+4 
+	~"ty³s.h
+"
+
+23 
+idt_š™
+();
+
+25 
+	sidt_’Œy_t
+ {
+
+26 
+ušt16_t
+ 
+	moff£t_lo
+;
+
+27 
+ušt16_t
+ 
+	m£l
+;
+
+28 
+ušt8_t
+ 
+	m®ways0
+;
+
+29 
+ušt8_t
+ 
+	mæags
+;
+
+30 
+ušt16_t
+ 
+	moff£t_hi
+;
+
+31 } 
+	t__©Œibu‹__
+ ((
+	t·cked
+)è
+	tidt_’Œy_t
+;
+
+34 
+	sidt_±r_t
+ {
+
+35 
+ušt16_t
+ 
+	mlim™
+;
+
+36 
+ušt32_t
+ 
+	mba£
+;
+
+37 } 
+	t__©Œibu‹__
+((
+	t·cked
+)è
+	tidt_±r_t
+;
+
+	@include/intr.h
+
+1 #iâdeà
+_INTR_H
+
+
+2 
+	#_INTR_H
+
+
+	)
+
+4 
+	~"ty³s.h
+"
+
+6 
+	s±_Œs_t
+ {
+
+7 
+ušt32_t
+ 
+	mds
+;
+
+8 
+ušt32_t
+ 
+	medi
+;
+
+9 
+ušt32_t
+ 
+	mesi
+;
+
+10 
+ušt32_t
+ 
+	mebp
+;
+
+11 
+ušt32_t
+ 
+	me¥
+;
+
+12 
+ušt32_t
+ 
+	mebx
+;
+
+13 
+ušt32_t
+ 
+	medx
+;
+
+14 
+ušt32_t
+ 
+	mecx
+;
+
+15 
+ušt32_t
+ 
+	m—x
+;
+
+16 
+ušt32_t
+ 
+	mšt_no
+;
+
+17 
+ušt32_t
+ 
+	m”r_code
+;
+
+18 
+ušt32_t
+ 
+	me
+;
+
+19 
+ušt32_t
+ 
+	mcs
+;
+
+20 
+ušt32_t
+ 
+	meæags
+;
+
+21 
+ušt32_t
+ 
+	mu£»¥
+;
+
+22 
+ušt32_t
+ 
+	mss
+;
+
+23 } 
+	t±_»gs
+;
+
+25 (*
+	tš‹¼u±_hªdËr_t
+)(
+	t±_»gs
+*);
 
 	@include/multiboot.h
 
@@ -2676,10 +2888,18 @@ STA_W
 , 0xcf);
 
 24 
+	`gdt_æush
+((
+ušt32_t
+)&
+gdt_±r
+);
+
+25 
 	}
 }
 
-26 
+27 
 	$gdt_£t_g©e
 (
 ušt32_t
@@ -2691,7 +2911,7 @@ ba£
 lim™
 ,
 
-27 
+28 
 ušt8_t
  
 acûss
@@ -2699,7 +2919,7 @@ acûss
 g¿nu
 )
 
-29 
+30 
 gdt_’Œ›s
 [
 num
@@ -2709,7 +2929,7 @@ ba£_low
 ba£
  & 0xffff;
 
-30 
+31 
 gdt_’Œ›s
 [
 num
@@ -2719,7 +2939,7 @@ ba£_mid
 ba£
  >> 16) & 0xff;
 
-31 
+32 
 gdt_’Œ›s
 [
 num
@@ -2729,7 +2949,7 @@ ba£_hi
 ba£
  >> 24) & 0xff;
 
-33 
+34 
 gdt_’Œ›s
 [
 num
@@ -2739,7 +2959,7 @@ lim™_low
 lim™
  & 0xffff);
 
-34 
+35 
 gdt_’Œ›s
 [
 num
@@ -2749,7 +2969,7 @@ g¿nu
 lim™
  >> 16) & 0x0f;
 
-36 
+37 
 gdt_’Œ›s
 [
 num
@@ -2757,7 +2977,7 @@ num
 g¿nu
  |= granu & 0xf0;
 
-37 
+38 
 gdt_’Œ›s
 [
 num
@@ -2765,7 +2985,7 @@ num
 acûss
  =‡ccess;
 
-38 
+39 
 	}
 }
 
@@ -2838,20 +3058,64 @@ mov
  
 	gss
 , 
-ax
+	gax
 
 
-13 
+13 ;
+upd©e
+ 
+	gds
+...
+
+15 
 	gjmp
  0x08: .
 æush
 
 
-15 .
-æush
+16 ;
+upd©e
+ 
+	gcs
+
+
+17 ;
+aá”
+ 
+this
+ 
+jmp
+ 
+	gds
+, 
+	ges
+, 
+	gfs
+, 
+gs
+ 
+ªd
+ 
+ss
+ 
+wžl
+ 
+	gk“p
+ 0x10
+
+18 ;
+cs
+ 
+wžl
+ 
+	gk“p
+ 0x08
+
+19 .
+	gæush
 :
 
-16 
+20 
 »t
 
 
@@ -3141,14 +3405,16 @@ s
 1
 .
 0
-21
-310
+23
+339
 boot/boot.s
 include/asm.c
 include/asm.h
 include/debug.h
 include/elf.h
 include/gdt.h
+include/idt.h
+include/intr.h
 include/multiboot.h
 include/string.c
 include/string.h
