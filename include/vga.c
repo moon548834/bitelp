@@ -79,7 +79,7 @@ void putline(char *ptr) {
 static void misc_init() {
 	uint8_t val;
 	val = inb(misc_r);
-	if(val & (uint8_t)IOAS == 0) {
+	if((val & (uint8_t)IOAS) == 0) {
 		// test the IOAS bit
 		// mapped to 0x3dx
 		val |= 1;

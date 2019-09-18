@@ -22,6 +22,12 @@ Segment Selector  offset
 */
 void idt_init();
 
+/* __attributed__ ((packed)) means not add padding and it can save memory space in some case
+On a 32-bit OS idt_entry_t needs 64bits memory, the same if without packed.
+But idt_ptr_t is different, 48bits if packed, 64bits if not.
+
+*/
+
 typedef struct idt_entry_t {
 	uint16_t offset_lo;
 	uint16_t sel;
